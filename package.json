@@ -1,0 +1,19 @@
+{
+  "name": "tptapi",
+  "version": "1.0.0",
+  "description": "A client for The Powder Toy API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "powdertoy",
+    "tpt"
+  ],
+  "author": "iovoid",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
+}
