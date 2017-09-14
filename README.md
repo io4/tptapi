@@ -2,6 +2,12 @@
 This package interacts with [Powder Toy](powdertoy.co.uk) 's API.
 
 ### Usage:
+```javascript
+var opts = {
+    url: 'http://powdertoy.co.uk'
+};
+var client = require('tptapi')(opts);
+```
 
 #### Login
 Most actions need a session token you can obtain from Login: `client.login(user, passwd);` returns a boolean.
@@ -47,12 +53,20 @@ To add a save to favutrites, you need to do `client.fav(id)`. Returns a boolean.
 To remove a save from favutrites, you need to do `client.remFav(id)`. Returns a boolean.
 
 #### Save [LOGIN NEEDED]
-Saves a CPS file. Data has to be OPS1-encoded save.
-`client.save(name, description, data)`. Returns save id.
+Saves a CPS file. Data **_has_** to be OPS1-encoded save.
+```javascript
+var data = fs.readFileSync("save.cps").toString();
+client.save(name, description, data)
+```
+Returns save id.
 
 #### Update Save [LOGIN NEEDED]
-Updates a save with new description and content. Data has to be OPS1-encoded save.
-`client.updateSave(id, description, data)`. Returns a boolean.
+Updates a save with new description and content. Data **_has_** to be OPS1-encoded save.
+```javascript
+var data = fs.readFileSync("save.cps").toString();
+client.updateSave(name, description, data)
+```
+Returns a boolean.
 
 #### Startup Data [LOGIN ENHACES OUTPUT]
 Returns Startup.json data. `client.startup()`
