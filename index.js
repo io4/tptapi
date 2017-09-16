@@ -51,7 +51,7 @@ function powderClient (opts){
     var o = self.optionSkeleton("Vote.api","POST");
     o.form = {
       "ID": Number(id),
-      "Action": (type>0):"Up":"Down"
+      "Action": (type>0)?"Up":"Down"
     }
     o.json = false;
     return rp(o).then(a=>(a=="OK"));
@@ -191,5 +191,6 @@ function powderClient (opts){
     };
     return rp(o);
   }
+  return self;
 }
 module.exports = powderClient;
